@@ -1,6 +1,9 @@
 package hr.fer.oprpp1.custom.collections.demo;
 
+import java.util.Iterator;
+
 import hr.fer.oprpp1.custom.collections.SimpleHashtable;
+import hr.fer.oprpp1.custom.collections.SimpleHashtable.TableEntry;
 
 /**
  * @author filip
@@ -35,6 +38,19 @@ public class SimpleHashtableDemo {
 		System.out.println("Number of stored pairs: " + examMarks.size()); // writes: 4
 		
 		System.out.println(examMarks.toString());
+		
+		SimpleHashtable<String, Integer> dictionary;
+		dictionary = new SimpleHashtable<>();
+		
+		
+		dictionary.put("Ivana", 2);
+		dictionary.put("Ante", 2);
+		dictionary.put("Jasna", 2);
+		
+		Iterator<TableEntry<String, Integer>> iterator = dictionary.iterator();
+		
+		iterator.next();
+		
 
 	}
 

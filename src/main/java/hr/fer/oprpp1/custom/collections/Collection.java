@@ -65,17 +65,24 @@ public interface Collection<T> {
 	 */
 	default void addAll(Collection<? extends T> other) {
 
-		class OtherProcess implements Processor<T> {
-
-			@Override
-			public void process(T value) {
-				add(value);
-			}
+		//Pitat zašto ne mogu ? extends T
+//		class OtherProcess implements Processor<T> {
+//
+//			@Override
+//			public void process(T value) {
+//				add(value);
+//			}
+//		}
+//
+//		OtherProcess process = new OtherProcess();
+//		other.forEach(process);
+		
+		
+		ElementsGetter<? extends T> iterator = other.createElementsGetter();
+		while(iterator.hasNextElement()) {
+			T element = iterator.getNextElement();
+			this.add(element);
 		}
-
-		OtherProcess process = new OtherProcess();
-
-		other.forEach(process);
 
 	}
 
@@ -96,6 +103,7 @@ public interface Collection<T> {
 	 * @param col given collection on which tester is tested
 	 * @param tester to test on givven collection
 	 */
+	//Moze i T, pitati sta nije T zapravo ? extends T
 	default void addAllSatisfying(Collection<? extends T> col, Tester<? super T> tester) {
 		
 		ElementsGetter<? extends T> iterator = col.createElementsGetter();

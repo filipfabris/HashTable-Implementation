@@ -27,8 +27,6 @@ class LinkedListIndexedCollectionOldTest {
 		defaultList.add("Tenk");
 		defaultList.add(Integer.valueOf(199));
 		defaultList.add("Los Angeles");
-		
-		sum = 0;
 	}
 
 	@Test

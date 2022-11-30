@@ -28,8 +28,6 @@ class ArrayIndexedCollectionOldTest {
 		defaultArray.add("Tenk");
 		defaultArray.add(Integer.valueOf(199));
 		defaultArray.add("Los Angeles");
-
-		sum = 0;
 	}
 
 	@Test

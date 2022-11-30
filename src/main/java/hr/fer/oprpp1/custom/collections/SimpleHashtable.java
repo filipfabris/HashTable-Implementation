@@ -11,9 +11,6 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import static java.lang.Math.abs;
 
-
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class SimpleHashtable.
  *
@@ -118,6 +115,7 @@ public class SimpleHashtable<K, V> implements Iterable<SimpleHashtable.TableEntr
 	
 	/** The table which stores main entrys inside its slots. */
 	TableEntry<K, V>[] table;
+	
 	
 	/** The key list. */
 	K[] keyList;
